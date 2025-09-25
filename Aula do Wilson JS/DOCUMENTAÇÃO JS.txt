@@ -1,0 +1,93 @@
+JavaScript
+JavaScript® (às vezes abreviado para JS) é uma linguagem leve, interpretada e baseada em objetos com funções de primeira classe, mais conhecida como a linguagem de script para páginas Web, mas usada também em vários outros ambientes sem browser, tais como node.js, Apache CouchDB e Adobe Acrobat. O JavaScript é uma linguagem baseada em protótipos, multi-paradigma e dinâmica, suportando estilos de orientação a objetos, imperativos e declarativos (como por exemplo a programação funcional). Saiba mais sobre o JavaScript.
+
+Essa seção do site é dedicada à linguagem JavaScript e não às partes que são específicas para páginas Web e outros ambientes. Para mais informações sobre as APIs específicas para páginas Web, por favor consulte as seções Web APIs e DOM.
+
+O padrão JavaScript é ECMAScript. Desde 2012, todos os navegadores modernos possuem suporte total ao ECMAScript 5.1. Navegadores mais antigos suportam pelo menos ECMAScript 3. Em 17 de Junho de 2015, a ECMA International publicou a sexta versão do ECMAScript, que é oficialmente chamado de ECMAScript 2015, e foi inicialmente conhecido como ECMAScript 6 ou ES6. Desde então, as especificações do ECMAScript são lançadas anualmente. Essa documentação faz referência à última versão de referência, que atualmente é a ECMAScript 2018.
+
+Não se deve confundir o JavaScript com a linguagem de programação Java. Tanto Java quanto JavaScript são marcas registradas da Oracle nos Estados Unidos da América e em outros países. No entanto, as duas linguagens de programação possuem sintaxe, semânticas e usos muito diferentes.
+
+In this article
+Tutoriais
+Referência
+Ferramentas & recursos
+Tutoriais
+Aprenda a programar em JavaScript com guias e tutoriais.
+
+Para iniciantes
+Vá para a Área de aprendizado de JavaScript se você quer aprender JavaScript mas não tem experiência prévia com JavaScript ou programação. Os módulos completos que estão disponíveis lá são os seguintes:
+
+Primeiros passos em JavaScript
+Respostas para algumas perguntas básicas como O que é JavaScript?, Com o que se parece? e O que se pode fazer?, bem como funcionalidades importantes do JavaScript, tais como variáveis, strings, números e vetores.
+
+Elementos básicos do JavaScript
+Continuamos nossa cobertura das funcionalidades fundamentais do JavaScript, direcionando nossa atenção para tipos de blocos de código encontrados comumente, como expressões condicionais, laços, funções e eventos.
+
+Introduzindo objetos em JavaScript
+O entendimento da natureza da orientação à objetos do JavaScript é importante se você quiser levar o seu conhecimento da linguagem para o próximo nível e escrever códigos mais eficientes, por isso oferecemos esse módulo para te ajudar.
+
+Guia do JavaScript
+Guia do JavaScript
+Um guia muito mais detalhado sobre a linguagem JavaScript, para pessoas que possuem experiência prévia com JavaScript ou outra linguagem de programação.
+
+Intermediário
+Uma re-introdução ao JavaScript
+Uma visão geral para aqueles que pensam que conhecem JavaScript.
+
+Estruturas de dados do JavaScript
+Um resumo das estruturas de dados disponíveis em JavaScript.
+
+Comparações de igualdade e uniformidade
+O JavaScript fornece três operações diferentes para comparar valores: igualdade estrita utilizando ===, igualdade ampla usando == e o método Object.is().
+
+Avançado
+Herança e a cadeia de protótipos
+Explicação da herança baseada em protótipos, que costuma ser amplamente mal entendida e subestimada.
+
+Modo estrito
+O modo estrito define que você não pode usar nenhuma variável antes de inicializá-la. É uma variante restrita do ECMAScript 5, para um desempenho mais performático e uma depuração mais fácil.
+
+Vetores JavaScript tipados
+Vetores JavaScript tipados oferecem um mecanismo para acesso a dados binários brutos.
+
+Gerenciamento de memória
+Ciclo de vida da memória e coleta de lixo em JavaScript.
+
+Modelo de concorrência e o loop de eventos
+JavaScript tem um modelo de concorrência baseado em loop de eventos.
+
+Referência
+Navegue pela documentação completa da Referência de JavaScript.
+
+Objetos globais
+Conheça os objetos padrão nativos Array, Boolean, Date, Error, Function, JSON, Math, Number, Object, RegExp, String, Map, Set, WeakMap e WeakSet, entre outros.
+
+Expressões e operadores
+Saiba mais sobre o comportamento dos operadores de JavaScript instanceof, typeof, new, this, a precedência dos operadores e muito mais.
+
+Instruções e declarações
+Saiba como do-while, for-in, for-of, try-catch, let, var, const, if-else, switch e outras instruções e palavras-chave do JavaScript funcionam.
+
+Funções
+Aprenda como trabalhar com funções em JavaScript para desenvolver suas aplicações.
+
+Ferramentas & recursos
+Ferramentas úteis para escrever e depurar seu código JavaScript.
+
+Ferramentas do Firefox para desenvolvedores
+Scratchpad, Web Console, JavaScript Profiler, Debugger e muito mais.
+
+JavaScript Shells
+Um shell JavaScript permite que você teste rapidamente fragmentos de código JavaScript.
+
+TogetherJS
+Colaboração fácil. Ao adicionar o TogetherJS ao seu site, seus usuários podem ajudar uns aos outros em tempo real!
+
+Stack Overflow
+Perguntas do Stack Overflow com a tag JavaScript.
+
+Versões do JavaScript e notas de lançamento
+Navegue no histórico de funcionalidades do JavaScript e no status das implementações.
+
+JSFiddle
+Edite JavaScript, CSS e HTML e obtenha resultados em tempo real. Utilize recursos externos e colabore com sua equipe online.
