@@ -1,0 +1,251 @@
+:root {
+    --bg: #08a3e0;
+    --card:rgba(39, 125, 182, 0.815);
+    --text:#ffffff8e;    
+    --muted: #777777;
+    --primary: #007bff; 
+    --border:  rgba(116, 204, 245, 0.993);
+}
+
+.dark {
+    --bg: #eb1010;
+    --card: #1e1e1e;
+    --text: #f0f0f0;    
+    --muted: #aaaaaa;
+    --primary: #1e90ff; 
+    --border: #333333;
+}
+
+body {
+   width: 100%;
+  height: 100%;
+  background: radial-gradient(
+        circle farthest-side at 0% 50%,
+        #282828 23.5%,
+        rgba(255, 170, 0, 0) 0
+      )
+      21px 30px,
+    radial-gradient(
+        circle farthest-side at 0% 50%,
+        #2c3539 24%,
+        rgba(240, 166, 17, 0) 0
+      )
+      19px 30px,
+    linear-gradient(
+        #282828 14%,
+        rgba(240, 166, 17, 0) 0,
+        rgba(240, 166, 17, 0) 85%,
+        #282828 0
+      )
+      0 0,
+    linear-gradient(
+        150deg,
+        #282828 24%,
+        #2c3539 0,
+        #2c3539 26%,
+        rgba(240, 166, 17, 0) 0,
+        rgba(240, 166, 17, 0) 74%,
+        #2c3539 0,
+        #2c3539 76%,
+        #282828 0
+      )
+      0 0,
+    linear-gradient(
+        30deg,
+        #282828 24%,
+        #2c3539 0,
+        #2c3539 26%,
+        rgba(240, 166, 17, 0) 0,
+        rgba(240, 166, 17, 0) 74%,
+        #2c3539 0,
+        #2c3539 76%,
+        #282828 0
+      )
+      0 0,
+    linear-gradient(90deg, #2c3539 2%, #282828 0, #282828 98%, #2c3539 0%) 0 0
+      #282828;
+  background-size: 40px 60px;
+  width: 100%;
+    height: 100%;
+    background-color: var(--bg); /* Use a variável aqui! */
+    color: var(--text); /* Adicione a cor do texto padrão aqui também */
+    /* transição para suavizar a mudança de tema */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2{
+    margin: 0 0 0.5rem;
+}
+  
+  .conteudo{
+    max-width: 100vh;
+    margin: 1rem auto;
+    padding: 0 1rem;
+    width: 1000px;
+  height: 230px;
+  border-radius: 30px;
+  box-shadow: rgba(15, 15, 36, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
+  }
+
+  .cabecalho{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    background-color: var(--card);
+  }
+
+  .cabecalho h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+.conteudo-formulario {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 0 rgb(5, 205, 255);
+}
+
+.grade {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmaz(220px,1fr));
+}
+h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.30rem;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+input, select {
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+}
+
+input::placeholder {
+  color: var(--text);
+}
+
+.botoes {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+
+button {
+  padding: 0.5rem 0.7rem;
+  border-radius: 10px;
+  border: 0;
+  background-color:#1e8fff;
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: transparent 0px 10px 0px 0px;
+  color:var(--text);
+  cursor: pointer;
+  background-color: var(--primary);
+    /* ... */
+}
+
+button:hover {
+  box-shadow: var(--text) 0px 7px 0px 0px;
+}
+
+button:active {
+  background-color: var(--text);
+  /*50, 168, 80*/
+  box-shadow:var(--text) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
+}
+
+.mensagem {
+  min-height: 1.25rem;
+  color: var(--text);
+  margin: 0.25rem 0 0;
+}
+
+.cabecalho-tabela {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.secao-tabela {
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.tabela {
+  width: 100%;
+}
+
+th, td {
+  padding: 0.6rem;
+  border-bottom: 1px solid var(--text);
+  text-align: left;
+}
+
+th {
+  background-color:var(--text);
+  font-weight: 700;
+}
+
+tr:hover{
+  /* Usando a variável de borda com transparência, por exemplo */
+  background-color: color-mix(in srgb, var(--border) 20%, transparent);
+}
+
+.resumo {
+  display: flex;
+  gap: 1rem;
+  color: var(--text);
+  justify-content: flex-end;
+  padding: 0.5rem 0.2rem;
+}
+
+.rodape {
+  text-align: center;
+  padding: 1rem;
+  color: var(--text);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
