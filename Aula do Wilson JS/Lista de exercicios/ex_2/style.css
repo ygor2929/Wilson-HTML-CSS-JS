@@ -1,0 +1,30 @@
+/* style.css */
+
+#botao {
+    /* Cor e Fundo */
+    background-color: #007BFF; /* Um azul bonito */
+    color: white;             /* Cor do texto */
+  
+    /* Espaçamento e Tamanho */
+    padding: 12px 20px;       /* Espaçamento interno (12px em cima/baixo, 20px nas laterais) */
+    font-size: 16px;          /* Tamanho da fonte */
+  
+    /* Bordas e Formato */
+    border: none;             /* Remove a borda padrão do navegador */
+    border-radius: 5px;       /* Deixa os cantos arredondados */
+  
+    /* Efeitos */
+    cursor: pointer;          /* Mostra a "mãozinha" ao passar o mouse */
+    transition: background-color 0.3s ease; /* Efeito suave ao mudar de cor */
+  }
+  
+  /* Efeito ao passar o mouse (hover) */
+  #botao:hover {
+    background-color: #0056b3; /* Um tom de azul mais escuro */
+  }
+  
+  /* Efeito ao clicar (active) */
+  #botao:active {
+    background-color: #004085; /* Um tom ainda mais escuro */
+    transform: translateY(1px); /* Dá um leve "afundar" no botão ao clicar */
+  }

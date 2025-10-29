@@ -1,0 +1,24 @@
+<!-- Enunciado: Perguntar o nome com prompt() e cumprimentar com alert(). Tratar caso o usuário não informe nada. -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Seja bem vindo a minha pagina</h1>
+    <script>
+        let nome = prompt("Qual o seu nome?");
+
+        if (nome && nome.trim()){
+            alert("Olá,"+ nome.trim() + "! SEJA BEM-VINDO AO SITE")
+        }else{
+            alert("Nome não informado")
+        }
+    </script>
+    
+</body>
+</html>

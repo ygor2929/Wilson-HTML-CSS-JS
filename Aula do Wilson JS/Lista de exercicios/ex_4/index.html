@@ -1,0 +1,23 @@
+<!-- Enunciado: Ler dois números e exibir a soma. -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calcular números</h1>
+    <h2 id="resultado-final"></h2>
+    <script>
+        const num1 = prompt("Digite o primeiro número:");
+        const numero1 = parseFloat(num1);
+        const num2 = prompt("Digite o segundo número:");
+        const numero2 = parseFloat(num2);
+        const soma = numero1 +  numero2;
+        const resultado = document.getElementById('resultado-final');
+        resultado.textContent = `A soma de ${numero1} + ${numero2} é: ${soma}`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!-- Enunciado: Ao clicar em um botão, alterar cor, tamanho e texto de um <h1>. -->
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+        <h1 id="titulo">O tema principar mudara de tamanho e a cor para azul assim que apertar o botão</h1>
+        
+        <buttom id="botao">Clique aqui</buttom>      
+        
+        <script>
+         const botao = document.getElementById('botao');
+         const titulo = document.getElementById('titulo');
+
+         botao.addEventListener('click', ()=> {
+            titulo.style.color = 'blue';
+            titulo.style.fontSize = '48px';
+            titulo.textContent = 'Texto alterado!'
+         });
+        </script>
+    </body>
+    </html>

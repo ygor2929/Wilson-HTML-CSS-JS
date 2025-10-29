@@ -1,0 +1,25 @@
+<!-- Enunciado: Criar contador que incrementa a cada clique no botão e mostra o total. -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de cliques</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2 id="contagem">Total de cliques: 0</h2>
+    <button id="botaoclick">Clique aqui</button>
+    <script>
+        const botao = document.getElementById('botaoclick');
+        const display = document.getElementById('contagem');
+        let contagem = 0;
+        botao.addEventListener('click', () => {
+            contagem++
+            display.textContent = `Total de cliques: ${contagem}`
+            
+        })
+    </script>
+</body>
+</html>

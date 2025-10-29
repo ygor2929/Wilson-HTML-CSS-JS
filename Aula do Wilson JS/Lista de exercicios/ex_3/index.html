@@ -1,0 +1,22 @@
+<!-- Enunciado: Ler um número e mostrar o dobro com duas casas decimais. -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calcular o dobro de um numero</h1>
+    <h2 id="resultado-final"></h2>
+    <script>
+        const numString = prompt("Digite um número:");
+        const numero = parseFloat(numString);
+        const dobro = numero * 2;
+        const formatar = dobro.toFixed(2);
+        const resultadofinal = document.getElementById('resultado-final');
+        resultadofinal.textContent = `O dobro de ${numero} é ${formatar}`;
+    </script>
+</body>
+</html>
