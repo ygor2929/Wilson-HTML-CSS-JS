@@ -1,0 +1,103 @@
+<!-- 11Enunciado: Dado N, calcular a soma de todos os números pares ≤ N. -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma dos Pares</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        input {
+            font-size: 1.1rem;
+            padding: 8px;
+            width: 150px;
+        }
+        button {
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        #resultado {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-top: 25px;
+            color: #2c3e50;
+        }
+        .erro {
+            color: red;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Calculadora de Soma dos Pares</h1>
+    <p>Digite um número (N) e calcularemos a soma de todos os números pares de 1 até N.</p>
+
+    <div>
+        <label for="numeroN">Número N:</label>
+        <input type="number" id="numeroN" placeholder="Digite N">
+        <button id="btnCalcular">Calcular</button>
+    </div>
+
+    <h2 id="resultado"></h2>
+
+
+    <script>
+        // Seleciona os elementos do HTML
+        const inputN = document.getElementById('numeroN');
+        const btnCalcular = document.getElementById('btnCalcular');
+        const h2Resultado = document.getElementById('resultado');
+
+        // Adiciona um "ouvinte" de evento de clique ao botão
+        btnCalcular.addEventListener('click', () => {
+            
+            // Limpa o resultado anterior
+            h2Resultado.textContent = '';
+            h2Resultado.className = '';
+
+            // Pega o valor do input e converte para um número inteiro
+            const n = parseInt(inputN.value);
+
+            // --- Validação ---
+            // Verifica se o valor é um número válido e positivo
+            if (isNaN(n) || n < 0) {
+                h2Resultado.textContent = 'Por favor, insira um número válido e positivo.';
+                h2Resultado.className = 'erro'; // Adiciona a classe de erro
+                return; // Para a execução da função aqui
+            }
+
+            // --- Lógica da Soma ---
+            let soma = 0;
+
+            // Método 1: Iterando por todos e verificando
+            /*
+            for (let i = 1; i <= n; i++) {
+                // Verifica se 'i' é par (resto da divisão por 2 é 0)
+                if (i % 2 === 0) {
+                    soma = soma + i; // ou soma += i;
+                }
+            }
+            */
+
+            // Método 2: Iterando apenas pelos pares (mais eficiente)
+            // Começa em 2 e incrementa de 2 em 2
+            for (let i = 2; i <= n; i += 2) {
+                soma += i;
+            }
+
+            // --- Exibição do Resultado ---
+            h2Resultado.textContent = `A soma dos pares de 1 até ${n} é: ${soma}`;
+        });
+
+    </script>
+    
+</body>
+</html>

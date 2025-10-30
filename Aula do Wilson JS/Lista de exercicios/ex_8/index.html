@@ -1,0 +1,26 @@
+<!-- 8Enunciado: Verificador de faixa etária - Input idade; botão indica “Permitido” ou “Proibido” -->
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de faixa etária</title>
+</head>
+<body>
+    <input type="number" id="idade" placeholder="Digite sua idade">
+    <button onclick="converter()">Clique aqui para ver o resultado</button>
+    <h2 id="resultado"></h2>
+    <script>
+        function converter(){
+            const idade = document.getElementById('idade').value;
+            const idade1 = parseFloat(idade);
+            if (idade >= 18){
+                document.getElementById('resultado').textContent = "Permitido"
+            }else{
+                document.getElementById('resultado').textContent = "Proibido"
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!-- 9Enunciado: Botão que mostra o dia da semana por extenso (ex.: “Segunda-feira”). -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia da semana</title>
+</head>
+<body>
+    <h1>Que dia é hoje?</h1>
+    <button id="dia">Mostrar dia</button>
+    <h2 id="resultado"></h2>
+    <script>
+        document.getElementById('dia').addEventListener('click', ()=>{
+            const diasDaSemana = ['Domingo','Segunda','Terça', 'Quarta', 'Quinta', 'Sexta','Sábado']
+            const hoje = new Date();
+        
+            document.getElementById('resultado').textContent = diasDaSemana[hoje.getDay()];
+        })
+    </script>
+</body>
+</html>

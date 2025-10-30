@@ -1,0 +1,147 @@
+<!-- 10Enunciado: Pedra, Papel ou Tesoura - Jogador escolhe; computador escolhe aleatório; mostrar resultado. -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedra, Papel ou Tesoura</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 40px;
+            background-color: #a8e3f5d7;
+        }
+        h1 {
+            color: #333;
+        }
+        #botoes-jogada {
+            margin-bottom: 30px;
+        }
+        button {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border: 2px solid #2366f7;
+            border-radius: 5px;
+            background-color: rgba(3, 185, 241, 0.637);
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #a1ddf5;
+        }
+        #resultado {
+            font-size: 1.1rem;
+        }
+        /* IDs para mostrar as escolhas */
+        #escolha-jogador, #escolha-pc {
+            font-weight: bold;
+        }
+        /* O resultado final (Venceu, Perdeu, Empatou) */
+        #vencedor {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        h1,h2,p{
+            color: #00bef8;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Jokenpô!</h1>
+    <p>Escolha sua jogada:</p>
+    
+    <div id="botoes-jogada">
+        <button id="pedra">Pedra 🗿</button>
+        <button id="papel">Papel 📃</button>
+        <button id="tesoura">Tesoura ✂️</button>
+    </div>
+
+    <div id="resultado">
+        <p>Você escolheu: <span id="escolha-jogador">...</span></p>
+        <p>O computador escolheu: <span id="escolha-pc">...</span></p>
+        <h2 id="vencedor">Aguardando jogada...</h2>
+    </div>
+
+    <script>
+        // Opções possíveis do jogo
+        const opcoes = ['pedra', 'papel', 'tesoura'];
+
+        // Seleciona os elementos do HTML
+        const btnPedra = document.getElementById('pedra');
+        const btnPapel = document.getElementById('papel');
+        const btnTesoura = document.getElementById('tesoura');
+
+        const spanEscolhaJogador = document.getElementById('escolha-jogador');
+        const spanEscolhaPC = document.getElementById('escolha-pc');
+        const h2Vencedor = document.getElementById('vencedor');
+
+        // Adiciona "ouvintes" de clique aos botões
+        btnPedra.addEventListener('click', () => jogar('pedra'));
+        btnPapel.addEventListener('click', () => jogar('papel'));
+        btnTesoura.addEventListener('click', () => jogar('tesoura'));
+
+        // Função principal que roda o jogo
+        function jogar(jogadaJogador) {
+            // Mostra a escolha do jogador
+            spanEscolhaJogador.textContent = formatarTexto(jogadaJogador);
+            
+            // Gera a escolha do computador
+            const jogadaPC = getJogadaComputador();
+            spanEscolhaPC.textContent = formatarTexto(jogadaPC);
+            
+            // Determina e mostra o vencedor
+            const resultado = determinarVencedor(jogadaJogador, jogadaPC);
+            h2Vencedor.textContent = resultado;
+
+            // Muda a cor do resultado (opcional)
+            if (resultado === 'Você Venceu!') {
+                h2Vencedor.style.color = 'green';
+            } else if (resultado === 'Você Perdeu!') {
+                h2Vencedor.style.color = 'red';
+            } else {
+                h2Vencedor.style.color = 'orange';
+            }
+        }
+
+        // Função para gerar a jogada aleatória do PC
+        function getJogadaComputador() {
+            // Math.random() * 3 => gera um número entre 0 e 2.99...
+            // Math.floor() => arredonda para baixo (0, 1 ou 2)
+            const indice = Math.floor(Math.random() * 3); 
+            return opcoes[indice];
+        }
+
+        // Função com a lógica de quem ganhou
+        function determinarVencedor(jogador, pc) {
+            if (jogador === pc) {
+                return 'Empate!';
+            }
+
+            // Regras de vitória do JOGADOR
+            if (
+                (jogador === 'pedra' && pc === 'tesoura') ||
+                (jogador === 'papel' && pc === 'pedra') ||
+                (jogador === 'tesoura' && pc === 'papel')
+            ) {
+                return 'Você Venceu!';
+            } 
+            
+            // Se não empatou e não venceu, o jogador perdeu
+            return 'Você Perdeu!';
+        }
+
+        // Função simples para deixar o texto mais bonito (ex: "pedra" vira "Pedra")
+        function formatarTexto(texto) {
+            return texto.charAt(0).toUpperCase() + texto.slice(1);
+        }
+
+    </script>
+    
+</body>
+</html>

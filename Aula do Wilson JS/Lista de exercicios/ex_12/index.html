@@ -1,0 +1,149 @@
+<!-- 12Enunciado: Um formulário com nome e email. Ao enviar, validar na página (sem recarregar) e mostrar mensagens. -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com Validação</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        /* Div para cada campo do formulário */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 95%;
+            padding: 8px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        /* Classes para as mensagens */
+        .mensagem {
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        .erro {
+            color: #d93025; /* Vermelho */
+        }
+        .sucesso {
+            color: #1a73e8; /* Azul/Verde */
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Formulário de Contato</h1>
+    <p>Preencha os dados e envie.</p>
+
+    <form id="meuFormulario">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+            <p id="erro-nome" class="mensagem erro"></p> 
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+            <p id="erro-email" class="mensagem erro"></p>
+        </div>
+        
+        <button type="submit">Enviar</button>
+
+        <p id="mensagem-sucesso" class="mensagem sucesso"></p>
+    </form>
+
+
+    <script>
+        // Seleciona os elementos do formulário
+        const form = document.getElementById('meuFormulario');
+        const nomeInput = document.getElementById('nome');
+        const emailInput = document.getElementById('email');
+
+        // Seleciona os locais das mensagens
+        const erroNome = document.getElementById('erro-nome');
+        const erroEmail = document.getElementById('erro-email');
+        const msgSucesso = document.getElementById('mensagem-sucesso');
+
+        // Adiciona o "ouvinte" de evento de 'submit'
+        form.addEventListener('submit', (event) => {
+            
+            // ----------------------------------------------------
+            // PASSO CHAVE: Impede o recarregamento da página
+            event.preventDefault(); 
+            // ----------------------------------------------------
+
+            // Limpa as mensagens de erro e sucesso anteriores
+            erroNome.textContent = '';
+            erroEmail.textContent = '';
+            msgSucesso.textContent = '';
+
+            let ehValido = true; // Variável de controle
+
+            // --- VALIDAÇÃO DO NOME ---
+            if (nomeInput.value.trim() === '') {
+                erroNome.textContent = 'O campo "Nome" é obrigatório.';
+                ehValido = false;
+            }
+
+            // --- VALIDAÇÃO DO EMAIL ---
+            const emailValor = emailInput.value.trim();
+            if (emailValor === '') {
+                erroEmail.textContent = 'O campo "Email" é obrigatório.';
+                ehValido = false;
+            } else if (!validarFormatoEmail(emailValor)) {
+                // Valida o formato
+                erroEmail.textContent = 'Por favor, insira um email válido (ex: seuemail@dominio.com).';
+                ehValido = false;
+            }
+
+
+            // --- RESULTADO FINAL ---
+            if (ehValido) {
+                // Se tudo estiver correto, mostra sucesso
+                msgSucesso.textContent = 'Formulário enviado com sucesso!';
+                
+                // Opcional: Limpa o formulário
+                form.reset(); 
+                
+                // (Aqui, no mundo real, você enviaria os dados para um servidor usando fetch() ou similar)
+            } else {
+                // Se houver erros, a variável 'ehValido' estará 'false'
+                // e as mensagens de erro já terão sido exibidas.
+            }
+
+        });
+
+
+        // Função auxiliar para validar o formato do email (usando Regex)
+        function validarFormatoEmail(email) {
+            // Expressão regular simples para verificar o formato do email
+            const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regexEmail.test(email);
+        }
+
+    </script>
+    
+</body>
+</html>
